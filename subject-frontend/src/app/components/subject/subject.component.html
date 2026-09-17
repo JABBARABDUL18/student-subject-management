@@ -1,0 +1,143 @@
+<div class="container">
+
+  <h1>Subject Management</h1>
+
+  <!-- Add / Update Form -->
+  <div class="form-card">
+
+    <h2>
+      {{ editingId === null ? 'Add Subject' : 'Edit Subject' }}
+    </h2>
+
+    <div class="form-group">
+      <label>Subject Name</label>
+      <input
+        type="text"
+        [(ngModel)]="newSubject.subName"
+        placeholder="Enter subject name"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label>Code</label>
+      <input
+        type="text"
+        [(ngModel)]="newSubject.code"
+        placeholder="Enter subject code"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label>Description</label>
+      <input
+        type="text"
+        [(ngModel)]="newSubject.description"
+        placeholder="Enter description"
+        required
+      />
+    </div>
+
+    <div class="button-group">
+
+      <button
+        *ngIf="editingId === null"
+        class="btn add-btn"
+        (click)="createSubject()">
+        Add Subject
+      </button>
+
+      <button
+        *ngIf="editingId !== null"
+        class="btn update-btn"
+        (click)="updateSubject()">
+        Update Subject
+      </button>
+
+      <button
+        *ngIf="editingId !== null"
+        class="btn cancel-btn"
+        (click)="editingId = null; newSubject = {
+          subName: '',
+          code: '',
+          description: ''
+        }">
+        Cancel
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- Subject List -->
+  <div class="list-card">
+
+    <div class="list-header">
+      <h2>Subject List</h2>
+
+      <span class="subject-count">
+        Total: {{ subjects.length }}
+      </span>
+    </div>
+
+    <div *ngIf="subjects.length === 0" class="empty-message">
+      No subjects found.
+    </div>
+
+    <div class="table-container" *ngIf="subjects.length > 0">
+
+      <table>
+
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Subject Name</th>
+            <th>Code</th>
+            <th>Description</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr *ngFor="let subject of subjects">
+
+            <td>{{ subject.subId }}</td>
+
+            <td>
+              {{ subject.subName || 'Not Available' }}
+            </td>
+
+            <td>{{ subject.code }}</td>
+
+            <td>{{ subject.description }}</td>
+
+            <td class="actions">
+
+              <button
+                class="btn edit-btn"
+                (click)="editSubject(subject)">
+                Edit
+              </button>
+
+              <button
+                class="btn delete-btn"
+                (click)="deleteSubject(subject.subId!)">
+                Delete
+              </button>
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+</div>
