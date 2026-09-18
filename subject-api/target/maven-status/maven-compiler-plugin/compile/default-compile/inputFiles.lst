@@ -1,6 +1,11 @@
-C:\Users\digvi\Desktop\subject-api\src\main\java\com\example\subject_api\controller\SubjectController.java
-C:\Users\digvi\Desktop\subject-api\src\main\java\com\example\subject_api\models\entity\Subject.java
-C:\Users\digvi\Desktop\subject-api\src\main\java\com\example\subject_api\repository\SubjectRepository.java
-C:\Users\digvi\Desktop\subject-api\src\main\java\com\example\subject_api\services\interfacess\ISubjectService.java
-C:\Users\digvi\Desktop\subject-api\src\main\java\com\example\subject_api\services\SubjectService.java
-C:\Users\digvi\Desktop\subject-api\src\main\java\com\example\subject_api\SubjectApiApplication.java
+C:\Users\digvi\Desktop\fold1\student-subject-management\subject-api\src\main\java\com\example\subject_api\controller\EnrollmentController.java
+C:\Users\digvi\Desktop\fold1\student-subject-management\subject-api\src\main\java\com\example\subject_api\controller\SubjectController.java
+C:\Users\digvi\Desktop\fold1\student-subject-management\subject-api\src\main\java\com\example\subject_api\models\entity\Enrollment.java
+C:\Users\digvi\Desktop\fold1\student-subject-management\subject-api\src\main\java\com\example\subject_api\models\entity\Subject.java
+C:\Users\digvi\Desktop\fold1\student-subject-management\subject-api\src\main\java\com\example\subject_api\repository\EnrollmentRepository.java
+C:\Users\digvi\Desktop\fold1\student-subject-management\subject-api\src\main\java\com\example\subject_api\repository\SubjectRepository.java
+C:\Users\digvi\Desktop\fold1\student-subject-management\subject-api\src\main\java\com\example\subject_api\services\EnrollmentService.java
+C:\Users\digvi\Desktop\fold1\student-subject-management\subject-api\src\main\java\com\example\subject_api\services\interfacess\IEnrollmentService.java
+C:\Users\digvi\Desktop\fold1\student-subject-management\subject-api\src\main\java\com\example\subject_api\services\interfacess\ISubjectService.java
+C:\Users\digvi\Desktop\fold1\student-subject-management\subject-api\src\main\java\com\example\subject_api\services\SubjectService.java
+C:\Users\digvi\Desktop\fold1\student-subject-management\subject-api\src\main\java\com\example\subject_api\SubjectApiApplication.java

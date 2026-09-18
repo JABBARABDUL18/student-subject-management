@@ -1,6 +1,11 @@
 com\example\subject_api\services\SubjectService.class
 com\example\subject_api\controller\SubjectController.class
+com\example\subject_api\models\entity\Enrollment.class
+com\example\subject_api\controller\EnrollmentController.class
 com\example\subject_api\SubjectApiApplication.class
 com\example\subject_api\models\entity\Subject.class
+com\example\subject_api\services\EnrollmentService.class
+com\example\subject_api\repository\EnrollmentRepository.class
 com\example\subject_api\repository\SubjectRepository.class
 com\example\subject_api\services\interfacess\ISubjectService.class
+com\example\subject_api\services\interfacess\IEnrollmentService.class
