@@ -11,6 +11,7 @@ import lombok.Setter;
 public class Enrollment{
     @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="e_Id")
     private Long eId;
 
     // @ManyToOne
