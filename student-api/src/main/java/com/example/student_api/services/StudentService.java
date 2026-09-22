@@ -26,4 +26,22 @@ public class StudentService implements IStudentService {
     public Student addStudent(Student student) {
         return StudentRepo.save(student);
     }
+
+    @Override
+    public Student updateStudent(Long id, Student student) {
+
+    Student existingStudent = StudentRepo.findById(id).orElseThrow();
+
+    existingStudent.setName(student.getName());
+    existingStudent.setEmail(student.getEmail());
+    existingStudent.setCourse(student.getCourse());
+    existingStudent.setPhone(student.getPhone());
+
+    return StudentRepo.save(existingStudent);
+    }
+
+    @Override
+    public void deleteStudent(Long id) {
+        StudentRepo.deleteById(id);
+    }
 }
