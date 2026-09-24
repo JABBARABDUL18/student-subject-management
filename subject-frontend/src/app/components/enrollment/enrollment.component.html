@@ -1,0 +1,163 @@
+<div class="enrollment-container">
+
+  <h1>Enrollment Management</h1>
+
+  <!-- Enrollment Form -->
+
+  <div class="form-card">
+
+    <h2>
+      {{ isEditing ? 'Update Enrollment' : 'Add Enrollment' }}
+    </h2>
+
+    <form (ngSubmit)="saveEnrollment()">
+
+      <!-- Subject -->
+
+      <div class="form-group">
+
+        <label for="subject">
+          Subject
+        </label>
+
+        <select
+          id="subject"
+          name="subject"
+          [(ngModel)]="selectedSubjectId"
+          required
+        >
+
+          <option [ngValue]="0">
+            -- Select Subject --
+          </option>
+
+          <option
+            *ngFor="let subject of subjects"
+            [ngValue]="subject.subId"
+          >
+            {{ subject.subName }} ({{ subject.code }})
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- Marks -->
+
+      <div class="form-group">
+
+        <label for="marks">
+          Marks
+        </label>
+
+        <input
+          id="marks"
+          type="number"
+          name="marks"
+          [(ngModel)]="marks"
+          min="0"
+          max="100"
+          required
+        />
+
+      </div>
+
+
+      <!-- Buttons -->
+
+      <button type="submit">
+
+        {{ isEditing ? 'Update Enrollment' : 'Add Enrollment' }}
+
+      </button>
+
+      <button
+        *ngIf="isEditing"
+        type="button"
+        (click)="resetForm()"
+      >
+        Cancel
+      </button>
+
+    </form>
+
+  </div>
+
+
+  <!-- Enrollment List -->
+
+  <div class="table-card">
+
+    <h2>All Enrollments</h2>
+
+    <table>
+
+      <thead>
+
+        <tr>
+          <th>eId</th>
+          <th>Subject ID</th>
+          <th>Subject Name</th>
+          <th>Marks</th>
+          <th>Actions</th>
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr *ngFor="let enrollment of enrollments">
+
+          <td>
+            {{ enrollment.eId }}
+          </td>
+
+          <td>
+            {{ enrollment.subject.subId }}
+          </td>
+
+          <td>
+            {{ enrollment.subject.subName }}
+          </td>
+
+          <td>
+            {{ enrollment.marks }}
+          </td>
+
+          <td>
+
+            <button
+              type="button"
+              (click)="editEnrollment(enrollment)"
+            >
+              Edit
+            </button>
+
+            <button
+              type="button"
+              (click)="deleteEnrollment(enrollment.eId!)"
+            >
+              Delete
+            </button>
+
+          </td>
+
+        </tr>
+
+
+        <tr *ngIf="enrollments.length === 0">
+
+          <td colspan="5">
+            No enrollments found.
+          </td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>
